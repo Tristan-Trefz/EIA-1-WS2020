@@ -36,22 +36,30 @@ a:hover{
 }
 
 #facebook{
+    width: fit-content;
     position: relative;
     bottom: 180px;
     right: 230px;
-    background-image: url(Resources/icon_facebook.png);
-    background-repeat: no-repeat;
 }
+
 #facebook:hover{
+    width: fit-content;
     position: relative;
-    bottom: 180px;
+    bottom: 190px;
     right: 230px;
-    background-image: url(Resources/icon_facebook_hover.png);
 }
 
 #IG{
+    width: fit-content;
     position: relative;
-    bottom: 180px;
+    bottom: 175px;
+    right: 230px;
+}
+
+#IG:hover{
+    width: fit-content;
+    position: relative;
+    bottom: 185px;
     right: 230px;
 }
 
