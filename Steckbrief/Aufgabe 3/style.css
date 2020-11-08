@@ -133,6 +133,7 @@ section{
 .Up{
     position: relative;
     bottom: 340px;
+    width: 810px;
 }
 
 .Up2{
@@ -144,6 +145,7 @@ section{
 .Up3{
     position: relative;
     bottom: 150px;
+    width: 800px;
 }
 
 #firstname{
