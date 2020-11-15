@@ -1,0 +1,46 @@
+body{
+    background-image: url(Resources/bg.png);
+}
+
+.center{
+    position: relative;
+    margin: auto;
+    background-image: url(Resources/wrapperbg.png);
+    width: 600px;
+    height: 400px;
+    margin-top: 150px;
+}
+
+.left{
+    position: absolute;
+    background-image: url(Resources/busch.png);
+    width: 222px;
+    height: 179px;
+    left: -70px;
+    top: -55px;
+    z-index: 5;
+}
+
+.right{
+    position: absolute;
+    background-image: url(Resources/pinguin.png);
+    width: 144px;
+    height: 193px;
+    left: 500px;
+    top: 220px;
+}
+
+h1{
+    position: absolute;
+    top: 45px;
+    left: 60px;
+    color: white;
+}
+
+p{
+    position: absolute;
+    top: 150px;
+    left: 60px;
+    width: 400px;
+    color: white;
+}

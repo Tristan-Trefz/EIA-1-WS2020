@@ -1,0 +1,30 @@
+body{
+    background-image: url(Resources/bg.png);
+}
+
+.center{
+    position: relative;
+    margin: auto;
+    background-image: url(Resources/wrapperbg.png);
+    width: 600px;
+    height: 400px;
+    margin-top: 150px;
+}
+
+.right{
+    position: absolute;
+    background-image: url(Resources/Banner.png);
+    z-index: 1;
+    width: 227px;
+    height: 122px;
+    left: 370px;
+    top: 277px;
+}
+
+#contentframe{
+    position: absolute;
+    top: 60px;
+    left: 50px;
+
+}
+

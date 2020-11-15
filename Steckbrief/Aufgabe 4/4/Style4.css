@@ -1,0 +1,43 @@
+body{
+    background-image: url(Resources/bg.png);
+}
+
+.center{
+    position: relative;
+    margin: auto;
+    background-image: url(Resources/wrapperbg.png);
+    width: 600px;
+    height: 400px;
+    margin-top: 150px;
+}
+
+h1{
+    position: absolute;
+    top: 45px;
+    left: 60px;
+    color: white;
+}
+
+label{
+    display: block;
+    color: white;
+}
+
+input{
+    display: block;
+}
+
+.Radio{
+    display: inline;
+}
+
+form{
+    position: absolute;
+    left: 60px;
+    top: 150px;
+}
+
+.Message{
+    width: 200px;
+    height: 60px;
+}
