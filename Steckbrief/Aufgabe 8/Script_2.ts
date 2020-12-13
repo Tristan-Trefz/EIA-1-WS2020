@@ -226,6 +226,59 @@ document.addEventListener("click", function () {
     }
 });
 
+document.addEventListener("keydown", function () {
+    if (loop.length == 1) {
+        one.classList.add("on");
+        one.classList.remove("off");
+    }
+    if (loop.length == 2) {
+        two.classList.add("on");
+        two.classList.remove("off");
+    }
+    if (loop.length == 3) {
+        three.classList.add("on");
+        three.classList.remove("off");
+    }
+    if (loop.length == 4) {
+        four.classList.add("on");
+        four.classList.remove("off");
+    }
+    if (loop.length == 5) {
+        five.classList.add("on");
+        five.classList.remove("off");
+    }
+    if (loop.length == 6) {
+        six.classList.add("on");
+        six.classList.remove("off");
+    }
+    if (loop.length == 7) {
+        seven.classList.add("on");
+        seven.classList.remove("off");
+    }
+    if (loop.length == 8) {
+        eight.classList.add("on");
+        eight.classList.remove("off");
+    } 
+    if (loop.length == 0) {
+        one.classList.remove("on");
+        one.classList.add("off");
+        two.classList.remove("on");
+        two.classList.add("off");
+        three.classList.remove("on");
+        three.classList.add("off");
+        four.classList.remove("on");
+        four.classList.add("off");
+        five.classList.remove("on");
+        five.classList.add("off");
+        six.classList.remove("on");
+        six.classList.add("off");
+        seven.classList.remove("on");
+        seven.classList.add("off");
+        eight.classList.remove("on");
+        eight.classList.add("off");
+    }
+});
+
 function beat(x: boolean): void {
     if (x == true) {
     interval1 = setInterval(function() {
