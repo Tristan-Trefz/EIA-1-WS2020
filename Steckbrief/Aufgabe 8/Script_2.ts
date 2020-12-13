@@ -1,0 +1,223 @@
+
+window.addEventListener("load", function() {
+
+var play: HTMLElement = document.querySelector("#play");
+var pause: HTMLElement = document.querySelector("#pause");
+var interval1: number;
+var loop: number [] = [];
+var rec: boolean;
+var recActive: HTMLElement = document.querySelector("#recActive");
+var recInactive: HTMLElement = document.querySelector("#recInactive");
+var del: HTMLElement = document.querySelector("#delete")
+var one: HTMLElement = document.querySelector("#one")
+var two: HTMLElement = document.querySelector("#two")
+var three: HTMLElement = document.querySelector("#three")
+var four: HTMLElement = document.querySelector("#four")
+var five: HTMLElement = document.querySelector("#five")
+var six: HTMLElement = document.querySelector("#six")
+var seven: HTMLElement = document.querySelector("#seven")
+var eight: HTMLElement = document.querySelector("#eight")
+
+var sounds = [
+    new Audio('Assets/BD_EvaMendez.wav'),
+    new Audio('Assets/FX_DoItVox.wav'),
+    new Audio('Assets/FX_VocLoop_110BPM.wav'),
+    new Audio('Assets/FX2.wav'),
+    new Audio('Assets/FX3.wav'),
+    new Audio('Assets/Ghosthack - Closed Hat (9).wav'),
+    new Audio('Assets/SD_SweetLovinVoc1.wav'),
+    new Audio('Assets/SD_SweetLovinVoc2.wav'),
+    new Audio('Assets/SD_Sütlac1.wav')
+];
+
+document.querySelector("#btn0").addEventListener("click", function () {
+    playSample(0);
+    recordSample (0);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "1"){
+    playSample(0);
+    recordSample (0);
+}});
+
+document.querySelector("#btn1").addEventListener("click", function () {
+    playSample(1);
+    recordSample (1);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "2"){
+    playSample(1);
+    recordSample (1);
+}});
+
+document.querySelector("#btn2").addEventListener("click", function () {
+    playSample(2);
+    recordSample (2);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "3"){
+    playSample(2);
+    recordSample (2);
+}});
+
+document.querySelector("#btn3").addEventListener("click", function () {
+    playSample(3);
+    recordSample (3);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "4"){
+    playSample(3);
+    recordSample (3);
+}});
+
+document.querySelector("#btn4").addEventListener("click", function () {
+    playSample(4);
+    recordSample (4);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "5"){
+    playSample(4);
+    recordSample (4);
+}});
+
+document.querySelector("#btn5").addEventListener("click", function () {
+    playSample(5);
+    recordSample (5);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "6"){
+    playSample(5);
+    recordSample (5);
+}});
+
+document.querySelector("#btn6").addEventListener("click", function () {
+    playSample(6);
+    recordSample (6);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "7"){
+    playSample(6);
+    recordSample (6);
+}});
+
+document.querySelector("#btn7").addEventListener("click", function () {
+    playSample(7);
+    recordSample (7);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "8"){
+    playSample(7);
+    recordSample (7);
+}});
+
+document.querySelector("#btn8").addEventListener("click", function () {
+    playSample(8);
+    recordSample (8);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key == "9"){
+    playSample(8);
+    recordSample (8);
+}});
+
+recInactive.addEventListener("click", function() {
+    recActive.classList.remove("inv");
+    recInactive.classList.add("inv");
+    rec = false;
+});
+
+recActive.addEventListener("click", function() {
+        recActive.classList.add("inv");
+        recInactive.classList.remove("inv");
+        rec = true;
+}); 
+
+play.addEventListener("click", function() {
+    beat(true);
+    play.classList.add("inv");
+    pause.classList.remove("inv");
+});
+
+pause.addEventListener("click", function() {
+    beat(false)
+    pause.classList.add("inv");
+    play.classList.remove("inv");
+});
+
+del.addEventListener("click", function() {
+    if (loop.length > 0) {
+        loop.length = 0;
+    }
+});
+
+function playSample(x) {
+    if (sounds[x].paused) {
+        sounds[x].play();
+    } else {
+        sounds[x].currentTime = 0;
+    }
+}
+
+function recordSample (y) {
+    if (rec == true){
+        loop.push(y);
+        console.log(loop);
+}}
+
+function bar () {
+if (loop.length == 1) {
+    one.classList.remove("off")
+    one.classList.add("off")
+}}
+
+
+
+function beat(x: boolean): void {
+    if (x == true) {
+    interval1 = setInterval(function() {
+        setTimeout(function() {
+            playSample(loop[0]);
+        },         0);
+        setTimeout(function() {
+            playSample(loop[1]);
+        },         250);
+        setTimeout(function() {
+            playSample(loop[2]);
+        },         500);
+        setTimeout(function() {
+            playSample(loop[3]);
+        },         750);
+        setTimeout(function() {
+            playSample(loop[4]);
+        },         1000);
+        setTimeout(function() {
+            playSample(loop[5]);
+        },         1250);
+        setTimeout(function() {
+            playSample(loop[6]);
+        },         1500);
+        setTimeout(function() {
+            playSample(loop[7]);
+        },         1750);
+        setTimeout(function() {
+            playSample(loop[8]);
+        },         2000);
+    },                      1000);
+    } else {
+        clearInterval(interval1);
+    }
+}
+
+
+
+
+});
