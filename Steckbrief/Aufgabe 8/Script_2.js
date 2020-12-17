@@ -16,15 +16,15 @@ window.addEventListener("load", function () {
     var seven = document.querySelector("#seven");
     var eight = document.querySelector("#eight");
     var sounds = [
-        new Audio('Assets/BD_EvaMendez.wav'),
-        new Audio('Assets/FX_DoItVox.wav'),
-        new Audio('Assets/FX_VocLoop_110BPM.wav'),
-        new Audio('Assets/FX2.wav'),
-        new Audio('Assets/FX3.wav'),
-        new Audio('Assets/Ghosthack - Closed Hat (9).wav'),
-        new Audio('Assets/SD_SweetLovinVoc1.wav'),
-        new Audio('Assets/SD_SweetLovinVoc2.wav'),
-        new Audio('Assets/SD_Sütlac1.wav')
+        new Audio("Assets/BD_EvaMendez.wav"),
+        new Audio("Assets/FX_DoItVox.wav"),
+        new Audio("Assets/FX_VocLoop_110BPM.wav"),
+        new Audio("Assets/FX2.wav"),
+        new Audio("Assets/FX3.wav"),
+        new Audio("Assets/Ghosthack - Closed Hat (9).wav"),
+        new Audio("Assets/SD_SweetLovinVoc1.wav"),
+        new Audio("Assets/SD_SweetLovinVoc2.wav"),
+        new Audio("Assets/SD_Sütlac1.wav")
     ];
     document.querySelector("#btn0").addEventListener("click", function () {
         playSample(0);
