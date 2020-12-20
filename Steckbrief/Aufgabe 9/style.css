@@ -1,0 +1,104 @@
+article {
+    width: 400px;
+    height: 800px;
+    margin-left: 80px;
+    margin-top: 40px;
+    font-family: 'ArialMT', 'Arial';
+}
+
+#title {
+    text-align: center;
+    font-size: 40px;
+    color: rgb(96, 102, 107);
+
+}
+
+#counter {
+    width: 400px;
+    height: 20px;
+    position: relative;
+    bottom: 30px;
+}
+
+#total {
+    text-align: center;
+    font-family:  'ArialMT', 'Arial';
+    font-size: 15pt;
+    color: lightslategray;
+}
+
+#container {
+    background-color: lightslategray;
+    width: 400px;
+    height: 900px;
+    position: relative;
+    bottom: 20px;
+}
+
+#new {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    background-color: white;
+    height: 40px;
+    width: 390px;
+    font-family:  'ArialMT', 'Arial';
+    font-size: 15pt;
+    color: lightslategray;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.item {
+    position: relative;
+    top: 20px;
+    left: 5px;
+    background-color: white;
+    height: 40px;
+    width: 390px;
+    font-family:  'ArialMT', 'Arial';
+    font-size: 15pt;
+    color: lightslategray;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#save {
+    position: relative;
+    top: 10px;
+    left: 5px;
+    background-color: white;
+    height: 40px;
+    width: 390px;
+    font-family:  'ArialMT', 'Arial';
+    font-size: 15pt;
+    color: lightslategray;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#clear {
+    position: relative;
+    top: 15px;
+    left: 5px;
+    background-color: white;
+    height: 40px;
+    width: 390px;
+    font-family:  'ArialMT', 'Arial';
+    font-size: 15pt;
+    color: lightslategray;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.dark {
+    background-color: lightslategray;
+}
+
+i {
+    position: relative;
+    float: right;
+    top: 5px;
+    right: 10px;
+    z-index: 1;
+}
