@@ -157,11 +157,5 @@ document.querySelector (".i20").addEventListener("click", function(): void {
     index--;
 });
 
-document.querySelector (".i1").addEventListener("click", function(): void {
-    let item: HTMLElement = document.getElementById("i1");
-    item.remove();
-    index--;
-});
-
 
 });

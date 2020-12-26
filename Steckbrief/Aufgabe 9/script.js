@@ -128,10 +128,5 @@ window.addEventListener("load", function () {
         item.remove();
         index--;
     });
-    document.querySelector(".i1").addEventListener("click", function () {
-        var item = document.getElementById("i1");
-        item.remove();
-        index--;
-    });
 });
 //# sourceMappingURL=script.js.map
