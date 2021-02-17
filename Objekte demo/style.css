@@ -1,0 +1,36 @@
+section {
+    position: relative;
+    top: 100px;
+    height: 160px;
+    width: 300px;
+    background-color: yellow;
+}
+
+#button {
+    position: relative;
+    top: 20px;
+}
+
+#taxi {
+    position: relative;
+    background-image: url(taxi.png);
+    height: 20px;
+    filter: drop-shadow(3px 3px 4px #4d4726);
+}
+
+#ergebnis {
+    position: relative;
+    top: 40px;
+    width: 250px;
+    height: 60px;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;    
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;  
+    background-color: gold;
+    filter: drop-shadow(3px 3px 4px #4d4726);
+}
+
+body {
+    background-color: rgb(131, 131, 131);
+}

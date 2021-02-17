@@ -101,7 +101,7 @@ window.addEventListener("load", function () {
 function drawListToDOM() {
     // alle todos erst einmal aus dem DOM löschen
     todosDOMElement.innerHTML = "";
-    var _loop_1 = function (index) {
+    var _loop_1 = function (index_1) {
         /**
          * Neues DIV-Element erstellen (würde auch mit innerHTML = "<div class='todo'></div>" gehen,
          * die Objekt-Instansierung ist aber übersichtlicher)
@@ -118,26 +118,26 @@ function drawListToDOM() {
          * ein Wert einer Variablen benötigt (bspw. für die CSS Klasse oder für den ToDo-Text),
          * hier muss die Zeichenkette unterbrochen werden.
          */
-        todo.innerHTML = "<span class='check " + list.key2[index] + "'><i class='fas fa-check'></i></span>"
-            + list.key1[index] +
+        todo.innerHTML = "<span class='check " + list.key2[index_1] + "'><i class='fas fa-check'></i></span>"
+            + list.key1[index_1] +
             "<span class='trash fas fa-trash-alt'></span>";
         // Zuweisen der Event-Listener für den Check- und den Trash-Button
         todo.querySelector(".check").addEventListener("click", function () {
             // hier wird der Index, also die aktuelle Stelle im Array dieses ToDos,
             // übergeben, damit an der entsprechenden Stelle im Array der Wert geändert werden kann.
-            toggleCheckState(index);
+            toggleCheckState(index_1);
         });
         todo.querySelector(".trash").addEventListener("click", function () {
             // hier wird der Index, also die aktuelle Stelle im Array dieses ToDos,
             // übergeben, damit die entsprechende Stelle im Array gelöscht werden kann.
-            deleteTodo(index);
+            deleteTodo(index_1);
         });
         // Bis hier hin wurde das neue Todo "zusammengebaut", jetzt wird es in den DOM gerendert.
         todosDOMElement.appendChild(todo);
     };
     // das ToDo-Array durchlaufen (iterieren) und Todo für Todo in den DOM schreiben
-    for (var index = 0; index < list.key1.length; index++) {
-        _loop_1(index);
+    for (var index_1 = 0; index_1 < list.key1.length; index_1++) {
+        _loop_1(index_1);
     }
     updateCounter();
 }
