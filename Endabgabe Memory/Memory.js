@@ -129,9 +129,6 @@ window.addEventListener("load", function () {
                                 user = 1;
                                 c1.classList.remove("c1");
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -139,9 +136,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -161,18 +155,12 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 2;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
                                     c2.classList.remove(edeck[1]);
                                     temp.classList.remove(card);
                                     visible = 1;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -192,18 +180,12 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 2;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
                                     c3.classList.remove(edeck[2]);
                                     temp.classList.remove(card);
                                     visible = 1;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -223,18 +205,12 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 2;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
                                     c4.classList.remove(edeck[3]);
                                     temp.classList.remove(card);
                                     visible = 1;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -254,9 +230,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 2;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -264,9 +237,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -286,9 +256,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 1;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -296,9 +263,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -318,9 +282,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 1;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -328,9 +289,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -350,9 +308,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 1;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -360,9 +315,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -392,9 +344,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 1;
                                 p2.innerHTML = score2.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -402,9 +351,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -423,18 +369,12 @@ window.addEventListener("load", function () {
                                 score2++;
                                 turn++;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
                                     c2.classList.remove(edeck[1]);
                                     temp.classList.remove(card);
                                     visible = 1;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -453,18 +393,12 @@ window.addEventListener("load", function () {
                                 score2++;
                                 turn++;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
                                     c3.classList.remove(edeck[2]);
                                     temp.classList.remove(card);
                                     visible = 1;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -483,18 +417,12 @@ window.addEventListener("load", function () {
                                 score2++;
                                 turn++;
                                 p1.innerHTML = score1.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
                                     c4.classList.remove(edeck[3]);
                                     temp.classList.remove(card);
                                     visible = 1;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -514,9 +442,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 1;
                                 p2.innerHTML = score2.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -524,9 +449,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -546,9 +468,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 1;
                                 p2.innerHTML = score2.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -556,9 +475,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -578,9 +494,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 1;
                                 p2.innerHTML = score2.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -588,9 +501,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    card = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }
@@ -610,9 +520,6 @@ window.addEventListener("load", function () {
                                 turn = 1;
                                 user = 1;
                                 p2.innerHTML = score2.toString();
-                                temp = null;
-                                card = null;
-                                pair = null;
                             }
                             else {
                                 setTimeout(function () {
@@ -620,8 +527,6 @@ window.addEventListener("load", function () {
                                     temp.classList.remove(card);
                                     visible = 1;
                                     turn++;
-                                    temp = null;
-                                    pair = null;
                                 }, 3000);
                             }
                         }

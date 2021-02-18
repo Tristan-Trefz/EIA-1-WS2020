@@ -146,18 +146,12 @@ ebutton.addEventListener("click", function(): void {
                         user = 1;
                         c1.classList.remove("c1");
                         p1.innerHTML = score1.toString();
-                        temp = null;
-                        card = null;
-                        pair = null;
                     } else {
                     setTimeout(function(): void {
                             c1.classList.remove(edeck[0]); 
                             temp.classList.remove(card);
                             visible = 1; 
                             turn++;
-                            temp = null;
-                            card = null;
-                            pair = null;
                         }, 
                                3000);
                 }} else {
@@ -178,17 +172,11 @@ ebutton.addEventListener("click", function(): void {
                         turn = 1;
                         user = 2;
                         p1.innerHTML = score1.toString();
-                        temp = null;
-                        card = null;
-                        pair = null;
                     } else {
                     setTimeout(function(): void {
                             c2.classList.remove(edeck[1]); 
                             temp.classList.remove(card);
                             visible = 1; 
-                            temp = null;
-                            card = null;
-                            pair = null;
                         }, 
                                3000);
                     }} else {
@@ -209,18 +197,12 @@ ebutton.addEventListener("click", function(): void {
                         turn = 1;
                         user = 2;
                         p1.innerHTML = score1.toString();
-                        temp = null;
-                        card = null;
-                        pair = null;
 
                     } else {
                     setTimeout(function(): void {
                             c3.classList.remove(edeck[2]); 
                             temp.classList.remove(card);
                             visible = 1; 
-                            temp = null;
-                            card = null;
-                            pair = null;
                         }, 
                                3000);
                     }} else {
@@ -241,18 +223,12 @@ ebutton.addEventListener("click", function(): void {
                         turn = 1;
                         user = 2;
                         p1.innerHTML = score1.toString();
-                        temp = null;
-                        card = null;
-                        pair = null;
 
                     } else {
                     setTimeout(function(): void {
                             c4.classList.remove(edeck[3]); 
                             temp.classList.remove(card);
                             visible = 1; 
-                            temp = null;
-                            card = null;
-                            pair = null;
                         }, 
                                3000);
                     }} else {
@@ -273,18 +249,12 @@ ebutton.addEventListener("click", function(): void {
                         turn = 1;
                         user = 2;
                         p1.innerHTML = score1.toString();
-                        temp = null;
-                        card = null;
-                        pair = null;
                     } else {
                     setTimeout(function(): void {
                             c5.classList.remove(edeck[4]); 
                             temp.classList.remove(card);
                             visible = 1; 
                             turn++;
-                            temp = null;
-                            card = null;
-                            pair = null;
                         }, 
                                3000);
                     }} else {
@@ -305,18 +275,12 @@ ebutton.addEventListener("click", function(): void {
                         turn = 1;
                         user = 1;
                         p1.innerHTML = score1.toString();
-                        temp = null;
-                        card = null;
-                        pair = null;
                     } else {
                     setTimeout(function(): void {
                             c6.classList.remove(edeck[5]); 
                             temp.classList.remove(card);
                             visible = 1; 
                             turn++;
-                            temp = null;
-                            card = null;
-                            pair = null;
                         }, 
                                3000);
                     }} else {
@@ -337,18 +301,12 @@ ebutton.addEventListener("click", function(): void {
                         turn = 1;
                         user = 1;
                         p1.innerHTML = score1.toString();
-                        temp = null;
-                        card = null;
-                        pair = null;
                     } else {
                     setTimeout(function(): void {
                             c7.classList.remove(edeck[6]); 
                             temp.classList.remove(card);
                             visible = 1; 
                             turn++;
-                            temp = null;
-                            card = null;
-                            pair = null;
                         }, 
                                3000);
                     }} else {
@@ -369,18 +327,12 @@ ebutton.addEventListener("click", function(): void {
                         turn = 1;
                         user = 1;
                         p1.innerHTML = score1.toString();
-                        temp = null;
-                        card = null;
-                        pair = null;
                     } else {
                     setTimeout(function(): void {
                             c8.classList.remove(edeck[7]); 
                             temp.classList.remove(card);
                             visible = 1; 
                             turn++;
-                            temp = null;
-                            card = null;
-                            pair = null;
                         }, 
                                3000);
                     }} else {
@@ -409,18 +361,14 @@ ebutton.addEventListener("click", function(): void {
                             turn = 1;
                             user = 1;
                             p2.innerHTML = score2.toString();
-                            temp = null;
-                            card = null;
-                            pair = null;
+
                         } else {
                         setTimeout(function(): void {
                                 c1.classList.remove(edeck[0]); 
                                 temp.classList.remove(card);
                                 visible = 1; 
                                 turn++;
-                                temp = null;
-                                card = null;
-                                pair = null;
+
                             }, 
                                    3000);
                         }} else {
@@ -440,17 +388,13 @@ ebutton.addEventListener("click", function(): void {
                             score2++;
                             turn++;
                             p1.innerHTML = score1.toString();
-                            temp = null;
-                            card = null;
-                            pair = null;
+
                         } else {
                         setTimeout(function(): void {
                                 c2.classList.remove(edeck[1]); 
                                 temp.classList.remove(card);
                                 visible = 1; 
-                                temp = null;
-                                card = null;
-                                pair = null;
+
                             }, 
                                    3000);
                         }} else {
@@ -470,17 +414,13 @@ ebutton.addEventListener("click", function(): void {
                             score2++;
                             turn++;
                             p1.innerHTML = score1.toString();
-                            temp = null;
-                            card = null;
-                            pair = null;
+
                         } else {
                         setTimeout(function(): void {
                                 c3.classList.remove(edeck[2]); 
                                 temp.classList.remove(card);
                                 visible = 1; 
-                                temp = null;
-                                card = null;
-                                pair = null;
+    
                             }, 
                                    3000);
                         }} else {
@@ -500,17 +440,13 @@ ebutton.addEventListener("click", function(): void {
                             score2++;
                             turn++;
                             p1.innerHTML = score1.toString();
-                            temp = null;
-                            card = null;
-                            pair = null;
+
                         } else {
                         setTimeout(function(): void {
                                 c4.classList.remove(edeck[3]); 
                                 temp.classList.remove(card);
                                 visible = 1; 
-                                temp = null;
-                                card = null;
-                                pair = null;
+
                             }, 
                                    3000);
                         }} else {
@@ -531,18 +467,14 @@ ebutton.addEventListener("click", function(): void {
                             turn = 1;
                             user = 1;
                             p2.innerHTML = score2.toString();
-                            temp = null;
-                            card = null;
-                            pair = null;
+
                         } else {
                         setTimeout(function(): void {
                                 c5.classList.remove(edeck[4]); 
                                 temp.classList.remove(card);
                                 visible = 1; 
                                 turn++;
-                                temp = null;
-                                card = null;
-                                pair = null;
+
                             }, 
                                    3000);
                         }} else {
@@ -563,18 +495,14 @@ ebutton.addEventListener("click", function(): void {
                             turn = 1;
                             user = 1;
                             p2.innerHTML = score2.toString();
-                            temp = null;
-                            card = null;
-                            pair = null;
+
                         } else {
                         setTimeout(function(): void {
                                 c6.classList.remove(edeck[5]); 
                                 temp.classList.remove(card);
                                 visible = 1; 
                                 turn++;
-                                temp = null;
-                                card = null;
-                                pair = null;
+
                             }, 
                                    3000);
                         }} else {
@@ -595,18 +523,14 @@ ebutton.addEventListener("click", function(): void {
                             turn = 1;
                             user = 1;
                             p2.innerHTML = score2.toString();
-                            temp = null;
-                            card = null;
-                            pair = null;
+
                         } else {
                         setTimeout(function(): void {
                                 c7.classList.remove(edeck[6]); 
                                 temp.classList.remove(card);
                                 visible = 1; 
                                 turn++;
-                                temp = null;
-                                card = null;
-                                pair = null;
+
                             }, 
                                    3000);
                         }} else {
@@ -627,17 +551,14 @@ ebutton.addEventListener("click", function(): void {
                             turn = 1;
                             user = 1;
                             p2.innerHTML = score2.toString();
-                            temp = null;
-                            card = null;
-                            pair = null;
+      
                         } else {
                         setTimeout(function(): void {
                                 c8.classList.remove(edeck[7]); 
                                 temp.classList.remove(card);
                                 visible = 1; 
                                 turn++;
-                                temp = null;
-                                pair = null;
+
                             }, 
                                    3000);
                         }} else {
