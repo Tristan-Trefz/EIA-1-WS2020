@@ -74,11 +74,24 @@ let mend: HTMLElement = document.querySelector("#mend");
 let hend: HTMLElement = document.querySelector("#hend");
 
 //Arrays fuer die jeweiligen Kartendecks
-let edeck: string[] = ["FP-C-1", "FP-C-2", "FP-G-1", "FP-G-2", "FP-O-1", "FP-O-2", "FP-R-1", "FP-R-2"]
+let edeck: string[] = ["FP-C-1", "FP-C-2", "FP-G-1", "FP-G-2", "FP-O-1", "FP-O-2", "FP-R-1", "FP-R-2"];
+let epairs: string[] = ["1", "1", "2", "2", "3", "3", "4", "4"];
 let mdeck: string[] = ["FSP-C-1", "FSP-C-2", "FSP-C-3", "FSP-C-4", "FSP-G-1", "FSP-G-2", "FSP-G-3", "FSP-G-4", "FSP-O-1", "FSP-O-2", "FSP-O-3", "FSP-O-4", "FSP-R-1", "FSP-R-2", "FSP-R-3", "FSP-R-4"];
 let hdeck: string[] = ["FS-C-1", "FS-C-2", "FS-C-3", "FS-C-4", "FS-G-1", "FS-G-2", "FS-G-3", "FS-G-4", "FS-O-1", "FS-O-2", "FS-O-3", "FS-O-4", "FS-R-1", "FS-R-2", "FS-R-3", "FS-R-4", "FS-P-1", "FS-P-2", "FS-P-3", "FS-P-4", "FS-B-1", "FS-B-2", "FS-B-3", "FS-B-4", "FS-L-1", "FS-L-2", "FS-L-3", "FS-L-4", "FS-Y-1", "FS-Y-2", "FS-Y-3", "FS-Y-4"];
 
-//Aeussere Funktionen zur Navigation zu und von der Startseite und den jeweiligen Spielbretten. 
+//Variablen fuer Kartenvergleiche und Punkzahl
+let visible: number = 1;
+let temp: HTMLElement;
+let card: string;
+let pair: string;
+let user: number = 1;
+let p1: HTMLElement = document.querySelector(".p1");
+let p2: HTMLElement = document.querySelector(".p2");
+let score1: number = 0;
+let score2: number = 0;
+let turn: number = 1;
+
+//Funktionen zum starten des SPiels 
 //CSS class "X" = nicht sichtbar
 ebutton.addEventListener("click", function(): void {
     start.classList.add("X");
@@ -86,34 +99,561 @@ ebutton.addEventListener("click", function(): void {
 
     //Funktion zum Mischen der Karten bei Spiel-Start
     function shuffle(edeck: string[]): string[] {
-        var currentindex: number = edeck.length, tempvalue: string, randomindex: number;
+        var deckindex: number = edeck.length, tempvalue: string, randomindex: number;
+        var pairindex: number;
+        var pairvalue: string;
+        var randompair: number;
 
         //Waehrend es Karten zum mischen gibt...
-        while (0 !== currentindex) {
+        while (0 !== deckindex) {
 
             //Waehle eine zufaellige Karte
-            randomindex = Math.floor(Math.random() * currentindex);
-            currentindex -= 1;
+            randomindex = Math.floor(Math.random() * deckindex);
+            deckindex -= 1;
+
+            pairindex = deckindex;
+            pairvalue = tempvalue;
+            randompair = randomindex;
 
             //Und tausche es mit der aktuellen Reihenfolge
-            tempvalue = edeck[currentindex];
-            edeck[currentindex] = edeck[randomindex];
+            tempvalue = edeck[deckindex];
+            edeck[deckindex] = edeck[randomindex];
             edeck[randomindex] = tempvalue;
+            
+            pairvalue = epairs[pairindex];
+            epairs[pairindex] = epairs[randompair];
+            epairs[randompair] = pairvalue;
         }
         return edeck;
     }
 
     shuffle(edeck);
 
-    //Den jeweiligen Raster-Positionen Karten zuweisen
-    c1.classList.add(edeck[0] + "X");
-    c2.classList.add(edeck[1] + "X");
-    c3.classList.add(edeck[2] + "X");
-    c4.classList.add(edeck[3] + "X");
-    c5.classList.add(edeck[4] + "X");
-    c6.classList.add(edeck[5] + "X");
-    c7.classList.add(edeck[6] + "X");
-    c8.classList.add(edeck[7] + "X");
+    window.addEventListener("click", function egame(): void { 
+    if (user == 1) {
+            if (turn < 3) {
+                console.log("user" + user);
+                console.log("turn" + turn);
+
+
+                c1.addEventListener("click", function(): void {
+                c1.classList.add(edeck[0]);
+    
+                if (visible == 2) {
+                    if (pair === epairs[0]) {
+                        score1++;
+                        turn = 1;
+                        user = 1;
+                        c1.classList.remove("c1");
+                        p1.innerHTML = score1.toString();
+                        temp = null;
+                        card = null;
+                        pair = null;
+                    } else {
+                    setTimeout(function(): void {
+                            c1.classList.remove(edeck[0]); 
+                            temp.classList.remove(card);
+                            visible = 1; 
+                            turn++;
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        }, 
+                               3000);
+                }} else {
+                        visible++;
+                        temp = c1;
+                        card = edeck[0];
+                        pair = epairs[0];
+                        turn++;
+                    }
+            });
+    
+                c2.addEventListener("click", function(): void {
+                c2.classList.add(edeck[1]);
+    
+                if (visible == 2) {
+                    if (pair == epairs[1]) {
+                        score1++;
+                        turn = 1;
+                        user = 2;
+                        p1.innerHTML = score1.toString();
+                        temp = null;
+                        card = null;
+                        pair = null;
+                    } else {
+                    setTimeout(function(): void {
+                            c2.classList.remove(edeck[1]); 
+                            temp.classList.remove(card);
+                            visible = 1; 
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        }, 
+                               3000);
+                    }} else {
+                        visible++;
+                        temp = c2;
+                        card = edeck[1];
+                        pair = epairs[1];
+                        turn++;
+                    }
+            });
+    
+                c3.addEventListener("click", function(): void {
+                c3.classList.add(edeck[2]);
+    
+                if (visible == 2) {
+                    if (pair == epairs[2]) {
+                        score1++;
+                        turn = 1;
+                        user = 2;
+                        p1.innerHTML = score1.toString();
+                        temp = null;
+                        card = null;
+                        pair = null;
+
+                    } else {
+                    setTimeout(function(): void {
+                            c3.classList.remove(edeck[2]); 
+                            temp.classList.remove(card);
+                            visible = 1; 
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        }, 
+                               3000);
+                    }} else {
+                        visible++;
+                        temp = c3;
+                        card = edeck[2];
+                        pair = epairs[2];
+                        turn++;
+                    }
+            });
+    
+                c4.addEventListener("click", function(): void {
+                c4.classList.add(edeck[3]);
+    
+                if (visible == 2) {
+                    if (pair == epairs[3]) {
+                        score1++;
+                        turn = 1;
+                        user = 2;
+                        p1.innerHTML = score1.toString();
+                        temp = null;
+                        card = null;
+                        pair = null;
+
+                    } else {
+                    setTimeout(function(): void {
+                            c4.classList.remove(edeck[3]); 
+                            temp.classList.remove(card);
+                            visible = 1; 
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        }, 
+                               3000);
+                    }} else {
+                        visible++;
+                        temp = c4;
+                        card = edeck[3];
+                        pair = epairs[3];
+                        turn++;
+                    }
+            });
+    
+                c5.addEventListener("click", function(): void {
+                c5.classList.add(edeck[4]);
+    
+                if (visible == 2) {
+                    if (pair === epairs[4]) {
+                        score1++;
+                        turn = 1;
+                        user = 2;
+                        p1.innerHTML = score1.toString();
+                        temp = null;
+                        card = null;
+                        pair = null;
+                    } else {
+                    setTimeout(function(): void {
+                            c5.classList.remove(edeck[4]); 
+                            temp.classList.remove(card);
+                            visible = 1; 
+                            turn++;
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        }, 
+                               3000);
+                    }} else {
+                        visible++;
+                        temp = c5;
+                        card = edeck[4];
+                        pair = epairs[4];
+                        turn++;
+                    }
+            });
+    
+                c6.addEventListener("click", function(): void {
+                c6.classList.add(edeck[5]);
+    
+                if (visible == 2) {
+                    if (pair === epairs[5]) {
+                        score1++;
+                        turn = 1;
+                        user = 1;
+                        p1.innerHTML = score1.toString();
+                        temp = null;
+                        card = null;
+                        pair = null;
+                    } else {
+                    setTimeout(function(): void {
+                            c6.classList.remove(edeck[5]); 
+                            temp.classList.remove(card);
+                            visible = 1; 
+                            turn++;
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        }, 
+                               3000);
+                    }} else {
+                        visible++;
+                        temp = c6;
+                        card = edeck[5];
+                        pair = epairs[5];
+                        turn++;
+                    }
+            });
+    
+                c7.addEventListener("click", function(): void {
+                c7.classList.add(edeck[6]);
+    
+                if (visible == 2) {
+                    if (pair === epairs[6]) {
+                        score1++;
+                        turn = 1;
+                        user = 1;
+                        p1.innerHTML = score1.toString();
+                        temp = null;
+                        card = null;
+                        pair = null;
+                    } else {
+                    setTimeout(function(): void {
+                            c7.classList.remove(edeck[6]); 
+                            temp.classList.remove(card);
+                            visible = 1; 
+                            turn++;
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        }, 
+                               3000);
+                    }} else {
+                        visible++;
+                        temp = c7;
+                        card = edeck[6];
+                        pair = epairs[6];
+                        turn++;
+                    }
+            });
+    
+                c8.addEventListener("click", function(): void {
+                c8.classList.add(edeck[7]);
+    
+                if (visible == 2) {
+                    if (pair === epairs[7]) {
+                        score1++;
+                        turn = 1;
+                        user = 1;
+                        p1.innerHTML = score1.toString();
+                        temp = null;
+                        card = null;
+                        pair = null;
+                    } else {
+                    setTimeout(function(): void {
+                            c8.classList.remove(edeck[7]); 
+                            temp.classList.remove(card);
+                            visible = 1; 
+                            turn++;
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        }, 
+                               3000);
+                    }} else {
+                        visible++;
+                        temp = c8;
+                        card = edeck[7];
+                        pair = epairs[7];
+                        turn++;
+                    }
+            });
+        } else {
+            user = 2;
+            turn = 1;
+    
+        }} else {
+            if (turn < 3) {
+                console.log("user" + user);
+                console.log("turn" + turn);
+
+                c1.addEventListener("click", function(): void {
+                    c1.classList.add(edeck[0]);
+        
+                    if (visible == 2) {
+                        if (pair === epairs[0]) {
+                            score2++;
+                            turn = 1;
+                            user = 1;
+                            p2.innerHTML = score2.toString();
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        } else {
+                        setTimeout(function(): void {
+                                c1.classList.remove(edeck[0]); 
+                                temp.classList.remove(card);
+                                visible = 1; 
+                                turn++;
+                                temp = null;
+                                card = null;
+                                pair = null;
+                            }, 
+                                   3000);
+                        }} else {
+                            visible++;
+                            temp = c1;
+                            card = edeck[0];
+                            pair = epairs[0];
+                            turn++;
+                        }
+                });
+        
+                c2.addEventListener("click", function(): void {
+                    c2.classList.add(edeck[1]);
+        
+                    if (visible == 2) {
+                        if (pair == epairs[1]) {
+                            score2++;
+                            turn++;
+                            p1.innerHTML = score1.toString();
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        } else {
+                        setTimeout(function(): void {
+                                c2.classList.remove(edeck[1]); 
+                                temp.classList.remove(card);
+                                visible = 1; 
+                                temp = null;
+                                card = null;
+                                pair = null;
+                            }, 
+                                   3000);
+                        }} else {
+                            visible++;
+                            temp = c2;
+                            card = edeck[1];
+                            pair = epairs[1];
+                            turn++;
+                        }
+                });
+        
+                c3.addEventListener("click", function(): void {
+                    c3.classList.add(edeck[2]);
+        
+                    if (visible == 2) {
+                        if (pair == epairs[2]) {
+                            score2++;
+                            turn++;
+                            p1.innerHTML = score1.toString();
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        } else {
+                        setTimeout(function(): void {
+                                c3.classList.remove(edeck[2]); 
+                                temp.classList.remove(card);
+                                visible = 1; 
+                                temp = null;
+                                card = null;
+                                pair = null;
+                            }, 
+                                   3000);
+                        }} else {
+                            visible++;
+                            temp = c3;
+                            card = edeck[2];
+                            pair = epairs[2];
+                            turn++;
+                        }
+                });
+        
+                c4.addEventListener("click", function(): void {
+                    c4.classList.add(edeck[3]);
+        
+                    if (visible == 2) {
+                        if (pair == epairs[3]) {
+                            score2++;
+                            turn++;
+                            p1.innerHTML = score1.toString();
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        } else {
+                        setTimeout(function(): void {
+                                c4.classList.remove(edeck[3]); 
+                                temp.classList.remove(card);
+                                visible = 1; 
+                                temp = null;
+                                card = null;
+                                pair = null;
+                            }, 
+                                   3000);
+                        }} else {
+                            visible++;
+                            temp = c4;
+                            card = edeck[3];
+                            pair = epairs[3];
+                            turn++;
+                        }
+                });
+        
+                c5.addEventListener("click", function(): void {
+                    c5.classList.add(edeck[4]);
+        
+                    if (visible == 2) {
+                        if (pair === epairs[4]) {
+                            score2++;
+                            turn = 1;
+                            user = 1;
+                            p2.innerHTML = score2.toString();
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        } else {
+                        setTimeout(function(): void {
+                                c5.classList.remove(edeck[4]); 
+                                temp.classList.remove(card);
+                                visible = 1; 
+                                turn++;
+                                temp = null;
+                                card = null;
+                                pair = null;
+                            }, 
+                                   3000);
+                        }} else {
+                            visible++;
+                            temp = c5;
+                            card = edeck[4];
+                            pair = epairs[4];
+                            turn++;
+                        }
+                });
+        
+                c6.addEventListener("click", function(): void {
+                    c6.classList.add(edeck[5]);
+        
+                    if (visible == 2) {
+                        if (pair === epairs[5]) {
+                            score2++;
+                            turn = 1;
+                            user = 1;
+                            p2.innerHTML = score2.toString();
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        } else {
+                        setTimeout(function(): void {
+                                c6.classList.remove(edeck[5]); 
+                                temp.classList.remove(card);
+                                visible = 1; 
+                                turn++;
+                                temp = null;
+                                card = null;
+                                pair = null;
+                            }, 
+                                   3000);
+                        }} else {
+                            visible++;
+                            temp = c6;
+                            card = edeck[5];
+                            pair = epairs[5];
+                            turn++;
+                        }
+                });
+        
+                c7.addEventListener("click", function(): void {
+                    c7.classList.add(edeck[6]);
+        
+                    if (visible == 2) {
+                        if (pair === epairs[6]) {
+                            score2++;
+                            turn = 1;
+                            user = 1;
+                            p2.innerHTML = score2.toString();
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        } else {
+                        setTimeout(function(): void {
+                                c7.classList.remove(edeck[6]); 
+                                temp.classList.remove(card);
+                                visible = 1; 
+                                turn++;
+                                temp = null;
+                                card = null;
+                                pair = null;
+                            }, 
+                                   3000);
+                        }} else {
+                            visible++;
+                            temp = c7;
+                            card = edeck[6];
+                            pair = epairs[6];
+                            turn++;
+                        }
+                });
+        
+                c8.addEventListener("click", function(): void {
+                    c8.classList.add(edeck[7]);
+        
+                    if (visible == 2) {
+                        if (pair === epairs[7]) {
+                            score2++;
+                            turn = 1;
+                            user = 1;
+                            p2.innerHTML = score2.toString();
+                            temp = null;
+                            card = null;
+                            pair = null;
+                        } else {
+                        setTimeout(function(): void {
+                                c8.classList.remove(edeck[7]); 
+                                temp.classList.remove(card);
+                                visible = 1; 
+                                turn++;
+                                temp = null;
+                                pair = null;
+                            }, 
+                                   3000);
+                        }} else {
+                            visible++;
+                            temp = c8;
+                            card = edeck[7];
+                            pair = epairs[7];
+                            turn++;
+                        }
+                });
+        
+            } else {
+                user = 1;
+                turn = 1;    
+        
+}}});
 });
 
 mbutton.addEventListener("click", function(): void {
@@ -214,15 +754,20 @@ hbutton.addEventListener("click", function(): void {
 eend.addEventListener("click", function(): void {
     start.classList.remove("X");
     easy.classList.add("X");
+    score1 = 0;
+    score2 = 0;
+    p1.innerHTML = score1.toString();
+    p2.innerHTML = score2.toString();
 
-    c1.classList.remove(edeck[0] + "X");
-    c2.classList.remove(edeck[1] + "X");
-    c3.classList.remove(edeck[2] + "X");
-    c4.classList.remove(edeck[3] + "X");
-    c5.classList.remove(edeck[4] + "X");
-    c6.classList.remove(edeck[5] + "X");
-    c7.classList.remove(edeck[6] + "X");
-    c8.classList.remove(edeck[7] + "X");
+
+    c1.classList.remove(edeck[0]);
+    c2.classList.remove(edeck[1]);
+    c3.classList.remove(edeck[2]);
+    c4.classList.remove(edeck[3]);
+    c5.classList.remove(edeck[4]);
+    c6.classList.remove(edeck[5]);
+    c7.classList.remove(edeck[6]);
+    c8.classList.remove(edeck[7]);
 });
 
 mend.addEventListener("click", function(): void {
